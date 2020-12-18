@@ -8,6 +8,7 @@ it's a Python script that will log in to the OdusPlus (University system) where 
 ```
 ## Update config.py with your current semester XPath and credentials
 How to copy your currentSemesterBodyPath:
+
 ![Screenshot](XPath.jpg)
 
 ### run with ``` py main.py ```
