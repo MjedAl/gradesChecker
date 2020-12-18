@@ -1,6 +1,5 @@
 # gradesChecker
-it's a Python script that will log in to the OdusPlus (University system) where students can see the grades of their courses and check if any new grade is uploaded in the current semester
-if a new grade was found it will send an email to you :)
+it's a Python script that will log in to the OdusPlus (University system) where students can see the grades of their courses and check if any new grade is uploaded in the current semester it will send an email to you :)
 
 # install required dependencies
 ```
