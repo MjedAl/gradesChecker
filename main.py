@@ -29,7 +29,7 @@ login()
 while True:
     driver.get('https://odusplus-ss.kau.edu.sa/PROD/ywsksinf.P_Display_All_Info')
     html_source = driver.page_source
-    if '<img src="../wtlgifs/banner/login.jpg" border="0">' in html_source:
+    if '<img src="../wtlgifs/banner/login.jpg" border="0">' in html_source or 'تم اكتشاف محاولة دخول غير مسموح بها! الرجاء تسجيل الدخول مرة أخرى.' in html_source:
         login()
     GradesTable = driver.find_element_by_xpath(currentSemesterBodyPath)
     rows = GradesTable.find_elements_by_xpath('./tr')
