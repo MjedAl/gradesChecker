@@ -39,25 +39,27 @@ while True:
     next(iterRows)
     for row in iterRows:
         courseCode = row.text.split()[0]+row.text.split()[1]
-        if courseCode not in foundCourses:
-            print('New grade detected for '+courseCode)
-            print('Time: '+str(datetime.now()))
-            foundCourses.append(courseCode)
-            subject = 'New grade detected on OdusPlus for '+courseCode
-            email_text = """\
-From: %s
-To: %s
-Subject: %s
-%s
-            """ % (sent_from, ", ".join(to), subject, body)
-            try:
-                server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-                server.ehlo()
-                server.login(gmail_user, gmail_password)
-                server.sendmail(sent_from, to, email_text)
-                server.close()
-                print ('Email sent!')
-            except:
-                print ('Something went wrong...')
+        grade = row.find_elements_by_xpath('./td')
+        if grade[5].text != ' ': # grade is not posted yet
+            if courseCode not in foundCourses:
+                print('New grade detected for '+courseCode)
+                print('Time: '+str(datetime.now()))
+                foundCourses.append(courseCode)
+                subject = 'New grade detected on OdusPlus for '+courseCode
+                email_text = """\
+    From: %s
+    To: %s
+    Subject: %s
+    %s
+                """ % (sent_from, ", ".join(to), subject, body)
+                try:
+                    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+                    server.ehlo()
+                    server.login(gmail_user, gmail_password)
+                    server.sendmail(sent_from, to, email_text)
+                    server.close()
+                    print ('Email sent!')
+                except:
+                    print ('Something went wrong...')
     print('Sleeping for 15m')
     time.sleep(900)
