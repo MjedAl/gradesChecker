@@ -47,10 +47,10 @@ while True:
                 foundCourses.append(courseCode)
                 subject = 'New grade detected on OdusPlus for '+courseCode
                 email_text = """\
-    From: %s
-    To: %s
-    Subject: %s
-    %s
+From: %s
+To: %s
+Subject: %s
+%s
                 """ % (sent_from, ", ".join(to), subject, body)
                 try:
                     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
