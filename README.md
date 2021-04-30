@@ -5,6 +5,8 @@ it's a Python script that will log in to the OdusPlus (University system) where 
 ## install required dependencies
 ```
     pip install -r requirements.txt
+    or
+    py -m pip install -r requirments.txt
 ```
 ## Update config.py with your current semester XPath and credentials
 How to copy your currentSemesterBodyPath:  
