@@ -10,8 +10,8 @@ it's a Python script that will log in to the OdusPlus (University system) where 
 ```
 ## Update config.py
 Update your current semester XPath and put your email and odus credentials  
-(For gmail you might want to put application password and allow less secure apps so that google doesn't block the code)
-How to copy your currentSemesterBodyPath:
+(For gmail you might want to put application password and allow less secure apps so that google doesn't block the code)  
+How to copy your currentSemesterBodyPath:  
 
 ![Screenshot](XPath.jpg)
 
