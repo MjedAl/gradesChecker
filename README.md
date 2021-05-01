@@ -18,3 +18,4 @@ How to copy your currentSemesterBodyPath:
 
 ### run with ``` py main.py ```
 #### if your chrome version is different you might need to change the chromedriver.exe
+https://chromedriver.chromium.org/downloads
