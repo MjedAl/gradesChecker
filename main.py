@@ -14,7 +14,7 @@ to = [gmail_user]
 body = 'Please check OdusPlus'
 path = "\chromedriver.exe"
 driver = webdriver.Chrome()  # Open the website
-driver.get('https://odusplus-ss.kau.edu.sa/PROD/ywsksinf.P_Display_All_Info')
+driver.get('https://odusplus-ss.kau.edu.sa/')
 
 firstRun = True
 
@@ -25,8 +25,7 @@ def login():
     username.send_keys(odus_id)
     password.send_keys(odus_password)
     loginButtonPath = '/html/body/div/div[2]/div/div[1]/div/form/button'
-    click = driver.find_element_by_xpath(loginButtonPath).click()
-    driver.get('https://odusplus-ss.kau.edu.sa/PROD/ywsksinf.P_Display_All_Info')
+    driver.find_element_by_xpath(loginButtonPath).click()
     time.sleep(2)  # Time to load
 
 
