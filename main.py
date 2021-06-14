@@ -20,12 +20,11 @@ firstRun = True
 
 
 def login():
-    username = driver.find_element_by_id('UserID')
-    password = driver.find_element_by_xpath(
-        '//*[@id="loginform"]/table/tbody/tr[2]/td/table/tbody/tr[2]/td[3]/input[1]')
+    username = driver.find_element_by_id('userid')
+    password = driver.find_element_by_id('password')
     username.send_keys(odus_id)
     password.send_keys(odus_password)
-    loginButtonPath = '//*[@id="loginform"]/table/tbody/tr[2]/td/table/tbody/tr[1]/td[4]/a/img'
+    loginButtonPath = '/html/body/div/div[2]/div/div[1]/div/form/button'
     click = driver.find_element_by_xpath(loginButtonPath).click()
     driver.get('https://odusplus-ss.kau.edu.sa/PROD/ywsksinf.P_Display_All_Info')
     time.sleep(2)  # Time to load
@@ -36,7 +35,7 @@ while True:
     driver.get('https://odusplus-ss.kau.edu.sa/PROD/ywsksinf.P_Display_All_Info')
     time.sleep(2)  # Time to load
     html_source = driver.page_source
-    if '<img src="../wtlgifs/banner/login.jpg" border="0">' in html_source or 'تم اكتشاف محاولة دخول غير مسموح بها! الرجاء تسجيل الدخول مرة أخرى.' in html_source:
+    if '<img src="../wtlgifs/banner/login.jpg" border="0">' in html_source or 'تم اكتشاف محاولة دخول غير مسموح بها! الرجاء تسجيل الدخول مرة أخرى.' in html_source or 'تسجيل دخول جامعة الملك عبدالعزيز' in html_source:
         login()
     GradesTable = driver.find_element_by_xpath(currentSemesterBodyPath)
     rows = GradesTable.find_elements_by_xpath('./tr')
