@@ -19,3 +19,6 @@ How to copy your currentSemesterBodyPath:
 ### run with ``` py main.py ```
 #### if your chrome version is different you might need to change the chromedriver.exe
 https://chromedriver.chromium.org/downloads
+
+#### Docker is fun
+If you are familiar with docker and want to run the script inside a container check this image [joyzoursky/python-chromedriver](https://hub.docker.com/r/joyzoursky/python-chromedriver/)
